@@ -42,7 +42,6 @@
     "@ionic-native/clipboard": "4",
     "@ionic-native/in-app-browser": "5.28.0",
     "@ionic-native/app-rate": ""
-
   },
   "devDependencies": {
     "karma-jasmine": "~2.0.1",
