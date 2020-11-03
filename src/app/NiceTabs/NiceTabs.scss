@@ -1,0 +1,49 @@
+.toolbar-with-central-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    contain: unset;
+    background-color: #F3F3F3;
+    ion-tab-button:first-of-type {
+        border-top-left-radius: 24px;
+    }
+    ion-tab-button:last-of-type {
+        border-top-right-radius: 24px;
+    }
+    ion-tab-button {
+        background-color: #F3F3F3;
+        a {
+            padding-inline-start: unset;
+            padding-inline-end: unset;
+            padding-left: unset;
+            padding-right: unset;
+        }
+    
+    ion-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.central-button {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -20px;
+    border-radius: 50%;
+    max-width: 100px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --ripple-color: yellow;
+    ion-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+}
+.hot-badge {
+    font-size: 7px;
+}

@@ -1,0 +1,169 @@
+<ion-header>
+    <ion-toolbar #j_689 mode="ios">
+        <ion-buttons #j_690 slot="start">
+            <ion-back-button #j_691 mode="ios">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title #j_692>
+            Deal Details
+        </ion-title>
+        <ion-buttons #j_693 slot="end">
+            <ion-button #j_694 expand="block" mode="ios" (click)="button4Click__j_694($event, currentItem)">
+                <ion-icon #j_694__icon name="share" slot="start">
+                </ion-icon>
+                Share
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card #j_647>
+        <ion-card-content #j_648>
+            <div #j_649>
+                <img src="{{this.img}}" alt="" />
+                <span class="discount">
+                    {{this.discount}}% OFF
+                </span>
+                <span class="expire">
+                    Listing expires in {{this.expire}} days ⏳
+                </span>
+            </div>
+            <ion-card-title #j_650 class="title">
+                {{this.title}}
+            </ion-card-title>
+            <ion-grid #j_651>
+                <ion-row #j_652>
+                    <ion-col #j_653 class="ion-align-self-center ion-no-padding">
+                        <span #j_654 mode="ios" color="warning" class="price">
+                            ${{this.price}}
+                        </span>
+                        <span #j_655 mode="ios" color="medium" class="oldprice">
+                            ${{this.oldprice}}
+                        </span>
+                    </ion-col>
+                    <ion-col #j_656 class="ion-align-self-center ion-text-end ion-no-padding">
+                        <rating #j_657 [readonly]="true" fullIcon="★" [(ngModel)]="this.star" [titles]="['one', 'two', 'three', 'four', 'five']"
+                        [disabled]="false" [float]="true" [max]="5" emptyIcon="☆" style="font-size: 10px;">
+                            <ion-img #j_658 src="assets/images/rating.png" alt="Image error">
+                            </ion-img>
+                        </rating>
+                    </ion-col>
+                    <ion-col #j_659 size="2" class="ion-align-self-center ion-text-start ion-no-padding">
+                        <div #j_660>
+                            <span style="font-size:10px;font-weight:700">
+                                ({{this.rating}})
+                            </span>
+                        </div>
+                    </ion-col>
+                    <ion-col #j_661 size="2" class="ion-align-self-center ion-text-end ion-no-padding">
+                        <div #j_662 class="prime-wrapper" [hidden]="this.isPrime">
+                            <img src="assets/images/prime.png" class="prime-img" alt="" />
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid #j_663>
+                <ion-row #j_664>
+                    <ion-col #j_665 class="ion-align-self-center ion-text-center ion-no-padding">
+                        <ion-radio-group class="like-radios aio-flex-space-around" #j_666 name="RadioGroup2">
+                            <ion-item #j_667__ion4Item lines="none" mode="ios">
+                                <ion-label #j_667__ion4Label class="like">
+                                    {{this.like}}
+                                </ion-label>
+                                <ion-radio #j_667 mode="ios" name="Radiobutton4" slot="end" value="{{this.like}}"
+                                (ionSelect)="radiobutton4IonSelect__j_667($event, currentItem)">
+                                </ion-radio>
+                                <ion-reorder>
+                                    <ion-icon name="__default" src="assets/images/d5b2a8b4cb3634c6fb40679bdb2a2f4d.svg">
+                                    </ion-icon>
+                                </ion-reorder>
+                            </ion-item>
+                            <ion-item #j_668__ion4Item lines="none" mode="ios">
+                                <ion-label #j_668__ion4Label class="disslike">
+                                    {{this.disslike}}
+                                </ion-label>
+                                <ion-radio #j_668 mode="ios" name="Radiobutton5" slot="end" value="{{this.disslike}}"
+                                (ionSelect)="radiobutton5IonSelect__j_668($event, currentItem)">
+                                </ion-radio>
+                                <ion-reorder>
+                                    <ion-icon name="__default" src="assets/images/thumb-down.svg">
+                                    </ion-icon>
+                                </ion-reorder>
+                            </ion-item>
+                            <ion-item #j_669__ion4Item lines="none" mode="ios">
+                                <ion-label #j_669__ion4Label class="disslike">
+                                    {{this.hotcount}}
+                                </ion-label>
+                                <ion-radio #j_669 mode="ios" name="RadioGroup2" slot="end" value="{{this.hotcount}}"
+                                (ionSelect)="radiobutton6IonSelect__j_669($event, currentItem)">
+                                </ion-radio>
+                                <ion-reorder>
+                                    <ion-icon name="" src="assets/images/like.svg">
+                                    </ion-icon>
+                                </ion-reorder>
+                            </ion-item>
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+                <ion-row #j_670>
+                    <ion-col #j_671 class="ion-align-self-center ion-text-center ion-padding">
+                        <ion-card-subtitle #j_672 color="success" class="extraDescription">
+                            {{this.extraDescription}}
+                        </ion-card-subtitle>
+                    </ion-col>
+                </ion-row>
+                <ion-row #j_673>
+                    <ion-col #j_674 class="ion-align-self-center ion-text-start">
+                        <ion-badge #j_675 mode="ios" color="tertiary" (click)="text9Click__j_675($event, currentItem)">
+                            Rate App ⭐
+                        </ion-badge>
+                    </ion-col>
+                    <ion-col #j_676 class="ion-align-self-center ion-text-end">
+                        <ion-badge #j_677 color="danger" mode="ios" [routerLink]="['/report', {id:this._id,title:this.title,img:this.img,reports:this.reports}]">
+                            Didn't Work Code Report ⚠️
+                        </ion-badge>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid #j_678>
+                <ion-row #j_679>
+                    <ion-col #j_680>
+                        <ion-text #j_681 class="desc">
+                            DESCRIPTION
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+                <ion-row #j_682>
+                    <ion-col #j_683>
+                        <p #j_684 (click)="text7Click__j_684($event, currentItem)">
+                            {{this.description.length&gt;100? this.description.substring(0,140) + &quot; ...&quot;:
+                            this.title}} Read More &gt;&gt;
+                        </p>
+                    </ion-col>
+                </ion-row>
+                <ion-row #j_685>
+                    <ion-col #j_686>
+                        <ion-text #j_687 color="danger">
+                            {{this.bottom_description}}
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+    <ion-grid #j_696>
+        <ion-row #j_697>
+            <ion-col #j_698>
+                <ion-button #j_699 color="secondary" expand="block" shape="round" strong="true"
+                href="{{this.url}}" (click)="button3_copyClick__j_699($event, currentItem)" onclick="copyToClipboard(this.id);"
+                id="{{this.code}}">
+                    <ion-icon #j_699__icon name="cut" slot="start">
+                    </ion-icon>
+                    Get Coupon
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

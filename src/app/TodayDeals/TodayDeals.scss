@@ -1,0 +1,222 @@
+.grid {
+    text-align: center;
+}
+
+.title {
+    display: block;
+    color: black;
+    font-size: 11px;
+    font-weight:700;
+}
+
+.title:active{
+    color:blue;
+}
+
+.title:hover{
+    color:blue;
+}
+
+.oldprice {
+   
+    font-size: 9px;
+    line-height: 24px;
+}
+
+.price {
+    font-size: 10px;
+    color: red;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+span.discount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0cd1e8;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 500;
+}
+
+
+
+img{
+    width: 100% !important;
+    height:140px !important;
+}
+
+
+.prime-deals-img{
+    width: 100% !important;
+    height:180px !important;
+}
+
+
+.code {
+    position: absolute;
+    left: -9999999px;
+}
+
+
+
+.category {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    color: #a2a4ab;
+    font-size: 10px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 700;
+}
+
+.search {
+    padding: 0 !important;
+}
+
+.prices {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.code-wrapper {
+    border: 2px solid #ddd;
+}
+
+
+
+.loadmorebtn {
+    width: 100px;
+    opacity: 0.8;
+}
+
+.prime-wrapper {
+    display: block;
+}
+
+.prime {
+    color: blue;
+    font-weight: 700;
+}
+
+.prime-img {
+    width: 40px !important;
+    height: 15px !important;
+    display: block;
+}
+
+//slider image res
+.slider-img {
+    width: 300px !important;
+    height: 230px !important;
+    padding: 10px 0;
+    margin: 0 auto;
+    border-radius: 10%;
+}
+
+.slide-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.slide-price {
+    font-size: 15px;
+    color: red;
+    margin: 5px 5px;
+    font-weight: 700;
+}
+
+.slide-oldprice {
+    text-decoration: line-through;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.slide-discount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0cd1e8;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 500;
+}
+
+.slide-prime-img {
+    width: 70px !important;
+    height: 25px !important;
+    display: block;
+    margin: 5px auto;
+}
+
+.slide-title-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    /* adjusted */
+}
+
+.featured-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    color: #a2a4ab;
+    font-size: 16px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 700;
+}
+
+
+
+ion-card-content{
+    padding:0 !important;
+}
+
+
+.like-btn{
+    font-size:10px;
+}
+
+
+.coupon-btn{
+    font-size:10px;
+}
+
+@media (min-width: 768px) {
+    img {
+        width: 80% !important;
+        height: 300px !important;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .oldprice {
+        font-size: 16px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .coupon-btn {
+        font-size: 16px;
+    }
+    .like-btn {
+        font-size: 14px;
+    }
+    .prime-img {
+        width: 100% !important;
+        height: 20px !important;
+        display: block;
+    }
+}
+
+

@@ -1,0 +1,107 @@
+<ion-header>
+    <ion-toolbar #j_68>
+        <ion-buttons #j_69 slot="start">
+            <ion-back-button #j_70 mode="ios">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title #j_71>
+            Update Account
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid #j_50>
+        <ion-row #j_51>
+            <ion-col #j_52 class="sign-up-wrapper">
+                <div #j_53 class="sign-up-panel">
+                    <div #j_54 class="form-wrapper">
+                        <form #signUpForm="ngForm" #signUpForm_el (ngSubmit)="signupformNgSubmit__j_55($event, currentItem)">
+                            <ion-item #j_56__ion4Item>
+                                <ion-label #j_56__ion4Label color="medium" position="floating">
+                                    First name
+                                </ion-label>
+                                <ion-icon #j_56__icon name="person" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #firstName="ngModel" #firstName_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                [value]="__getMapping(currentItem, 'j_56__value', '', false)" color="dark" maxlength="50"
+                                minlength="1" name="firstName" pattern="^[a-zA-Z0-9 ]*$" required="true" type="text"
+                                (ionChange)="__setMapping($event, 'j_56__value')">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_57 color="danger" class="error" [ngClass]="{'visible': firstName.touched && firstName.errors}">
+                                {{firstName.errors &amp;&amp; firstName.errors.pattern ? 'Special characters are
+                                not allowed' : 'Please enter a valid First name'}}
+                            </ion-text>
+                            <ion-item #j_58__ion4Item>
+                                <ion-label #j_58__ion4Label color="medium" position="floating">
+                                    Last name
+                                </ion-label>
+                                <ion-icon #j_58__icon name="person" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #lastName="ngModel" #lastName_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                [value]="__getMapping(currentItem, 'j_58__value', '', false)" color="dark" maxlength="50"
+                                minlength="1" name="lastName" pattern="^[a-zA-Z0-9 ]*$" required="true" type="text"
+                                (ionChange)="__setMapping($event, 'j_58__value')">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_59 color="danger" class="error" [ngClass]="{'visible': lastName.touched && lastName.errors}">
+                                {{lastName.errors &amp;&amp; lastName.errors.pattern ? 'Special characters are not
+                                allowed' : 'Please enter a valid Last name'}}
+                            </ion-text>
+                            <ion-item #j_60__ion4Item>
+                                <ion-label #j_60__ion4Label color="medium" position="floating">
+                                    Email
+                                </ion-label>
+                                <ion-icon #j_60__icon name="mail" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #username="ngModel" #username_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                [value]="__getMapping(currentItem, 'j_60__value', '', false)" color="dark" maxlength="254"
+                                minlength="1" name="username" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                                required="true" type="email" (ionChange)="__setMapping($event, 'j_60__value')">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_61 color="danger" class="error" [ngClass]="{'visible': username.touched && username.errors}">
+                                Please enter a valid Email
+                            </ion-text>
+                            <ion-item #j_62__ion4Item>
+                                <ion-label #j_62__ion4Label color="medium" position="floating">
+                                    Username
+                                </ion-label>
+                                <ion-icon #j_62__icon name="person-add" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #uname="ngModel" #uname_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                [value]="__getMapping(currentItem, 'j_62__value', '', false)" color="dark" maxlength="254"
+                                minlength="1" name="uname" pattern="^[a-zA-Z0-9 ]*$" required="true" type="text"
+                                (ionChange)="__setMapping($event, 'j_62__value')">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_63 color="danger" class="error" [ngClass]="{'visible': uname.touched && uname.errors}">
+                                Please enter a valid username
+                            </ion-text>
+                            <ion-item #j_64__ion4Item>
+                                <ion-label #j_64__ion4Label color="medium" position="floating">
+                                    New Password
+                                </ion-label>
+                                <ion-icon #j_64__icon ngClass="eye" name="eye" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #password="ngModel" #password_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                ngClass="password" color="dark" maxlength="50" minlength="6" name="password" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,50}$"
+                                required="true" type="password">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_65 color="danger" class="error" [ngClass]="{'visible': password.touched && password.errors}">
+                                {{password.errors &amp;&amp; password.errors.pattern ? 'Password must be at least
+                                6 characters long, contain letters, numbers and symbols' : 'Please enter a valid
+                                Password'}}
+                            </ion-text>
+                            <ion-button #j_66 color="success" expand="block" mode="ios" size="small" type="submit"
+                            (click)="markFormControlsAsTouched()">
+                                Update
+                            </ion-button>
+                        </form>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

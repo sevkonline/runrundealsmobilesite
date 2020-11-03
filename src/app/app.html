@@ -1,0 +1,59 @@
+<ion-app>
+    <ion-menu contentId="main-content" disabled="false" side="start" swipeGesture="true"
+    type="overlay">
+        <ion-header>
+            <ion-img #j_618 src="assets/images/mobile-logo.png" alt="Image error" class="logo">
+            </ion-img>
+        </ion-header>
+        <ion-content (click)="content2Click__j_597($event, currentItem)">
+            <ion-list #j_598>
+                <ion-item #j_599 lines="full" [routerLink]="['/nicetabs']">
+                    <ion-icon #j_600 name="none" color="secondary" size="large" slot="start" src="assets/images/home.svg">
+                    </ion-icon>
+                    <ion-label #j_601>
+                        Today Deals
+                    </ion-label>
+                </ion-item>
+                <ion-item #j_602 lines="full" [routerLink]="['/profile']">
+                    <ion-icon #j_603 name="none" color="secondary" size="large" slot="start" src="assets/images/af6ab19226b0d34e324ee57178e4c26b.svg">
+                    </ion-icon>
+                    <ion-label #j_604>
+                        Profile
+                    </ion-label>
+                </ion-item>
+                <ion-item #j_605 lines="full" [routerLink]="['/info']">
+                    <ion-icon #j_606 name="none" color="secondary" size="large" slot="start" src="assets/images/a_eeb8b950b7309ad4c9590674c71fb9c.svg">
+                    </ion-icon>
+                    <ion-label #j_607>
+                        About us
+                    </ion-label>
+                </ion-item>
+                <ion-item #j_608 lines="full" [routerLink]="['/feedback']">
+                    <ion-icon #j_609 name="none" color="secondary" size="large" slot="start" src="assets/images/email.svg">
+                    </ion-icon>
+                    <ion-label #j_610>
+                        Contact Us
+                    </ion-label>
+                </ion-item>
+                <ion-item #j_611 lines="full" (click)="listitem7_copy3Click__j_611($event, currentItem)">
+                    <ion-icon #j_612 name="none" color="secondary" size="large" slot="start" src="assets/images/globe.svg">
+                    </ion-icon>
+                    <ion-label #j_613>
+                        Visit Our Web Page
+                    </ion-label>
+                </ion-item>
+                <ion-item #j_614 lines="full" (click)="listitem7_copy4Click__j_614($event, currentItem)">
+                    <ion-icon #j_615 name="none" color="secondary" size="large" slot="start" src="assets/images/a_624c4d91e617af4657db7c78b808d05.svg">
+                    </ion-icon>
+                    <ion-label #j_616>
+                        Rate App
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+        <ion-footer>
+        </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="main-content">
+    </ion-router-outlet>
+</ion-app>

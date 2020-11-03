@@ -1,0 +1,112 @@
+<ion-header>
+    <ion-toolbar #j_587 mode="ios">
+        <ion-buttons #j_588 slot="start">
+            <ion-back-button #j_589 mode="ios">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title #j_590>
+            {{this.categoryName}} Deals 🎁
+        </ion-title>
+        <ion-buttons #j_591 slot="end">
+            <ion-menu-button #j_592>
+                <ion-icon #j_592__icon src="assets/images/open-menu.svg">
+                </ion-icon>
+            </ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card #j_553 mode="ios" class="todoListItem" *ngFor="let task of listbyCategory"
+    data-id="">
+        <ion-card-content #j_554 class="card-item">
+            <ion-grid #j_555>
+                <ion-row #j_556 class="ion-align-items-center">
+                    <ion-col #j_557 size="4" size-lg="6" size-md="6" size-xl="6" class="img-wrapper ion-text-center ion-no-padding">
+                        <img src="{{task.imgurl}}" [routerLink]="['/dealdetail', task]" alt="" />
+                        <span class="discount">
+                            -{{task.discount}}%
+                        </span>
+                    </ion-col>
+                    <ion-col #j_559 class="grid">
+                        <ion-label #j_560 color="primary" class="title" [routerLink]="['/dealdetail', task]">
+                            {{task.title.length&gt;30? task.title.substring(0,30) + &quot; ...&quot;: task.title}}
+                            &lt;Detail&gt;
+                        </ion-label>
+                        <ion-text #j_561>
+                            #Ad
+                        </ion-text>
+                        <ion-grid #j_562 class="ion-padding-top">
+                            <ion-row #j_563 class="ion-align-items-center">
+                                <ion-col #j_564 size="5" class="ion-align-self-center ion-text-end ion-no-padding">
+                                    <rating #j_565 [readonly]="true" fullIcon="★" [(ngModel)]="task.star" [titles]="['one', 'two', 'three', 'four', 'five']"
+                                    [disabled]="false" [float]="true" [max]="5" emptyIcon="☆" style="font-size: 8px;">
+                                        <ion-img #j_566 src="assets/images/rating.png" alt="Image error">
+                                        </ion-img>
+                                    </rating>
+                                </ion-col>
+                                <ion-col #j_567 size="2" class="ion-align-self-center ion-text-start ion-no-padding">
+                                    <div #j_568>
+                                        <span style="font-size:9px;font-weight:700">
+                                            ({{task.rating}})
+                                        </span>
+                                    </div>
+                                </ion-col>
+                                <ion-col #j_569 size="5" class="ion-text-end ion-no-padding">
+                                    <ion-button #j_570 buttonType="button" color="secondary" expand="block" mode="ios"
+                                    shape="round" size="small" strong="true" href="{{task.url}}" class="coupon-btn" (click)="button4_copy1Click__j_570($event, currentItem)"
+                                    onclick="copyToClipboard(this.id);" data-id="{{task.code}}">
+                                        Get Coupon
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <ion-grid #j_571 class="ion-padding-top">
+                            <ion-row #j_572>
+                                <ion-col #j_573 size="5" class="ion-align-self-center ion-text-start ion-no-padding">
+                                    <span #j_574 mode="ios" color="danger" class="price">
+                                        ${{task.price}}
+                                    </span>
+                                    <span #j_575 mode="ios" color="medium" class="oldprice">
+                                        ${{task.old_price}}
+                                    </span>
+                                </ion-col>
+                                <ion-col #j_576 size="2" class="ion-align-self-center ion-text-start ion-no-padding">
+                                    <div #j_577 class="prime-wrapper" [hidden]="!task.isPrime">
+                                        <img class="prime-img" src="assets/images/prime.png" alt="" />
+                                    </div>
+                                </ion-col>
+                                <ion-col #j_578 class="ion-no-padding">
+                                    <ion-grid #j_579 class="ion-no-padding">
+                                        <ion-row #j_580 class="ion-align-items-center ion-justify-content-center">
+                                            <ion-col #j_581 size="4" class="ion-align-self-center ion-text-start ion-no-padding">
+                                                <ion-button #j_582 color="medium" disabled="false" fill="clear" mode="ios" size="small"
+                                                class="like-btn" [routerLink]="['/dealdetail', task]">
+                                                    <ion-icon #j_582__icon slot="start" src="assets/images/thumbs-up-hand-symbol.svg">
+                                                    </ion-icon>
+                                                    {{((task.like))}}
+                                                </ion-button>
+                                            </ion-col>
+                                            <ion-col #j_583 size="3" class="ion-align-self-center ion-text-end ion-no-padding">
+                                                <ion-button #j_584 color="medium" disabled="false" fill="clear" mode="ios" size="small"
+                                                class="like-btn" [routerLink]="['/dealdetail', task]">
+                                                    <ion-icon #j_584__icon slot="start" src="assets/images/love.svg">
+                                                    </ion-icon>
+                                                    {{(task.hotcount)}}
+                                                </ion-button>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <ion-input #j_585 ngClass="code" name="Input2" placeholder="Enter text" readonly="true"
+                        value="{{task.code}}" id="{{task.code}}">
+                        </ion-input>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+</ion-footer>

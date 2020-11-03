@@ -1,0 +1,86 @@
+<ion-content class="content" color="light">
+    <ion-grid #j_499>
+        <ion-row #j_500>
+            <ion-col #j_501 class="login-wrapper">
+                <div #j_502 class="login-panel">
+                    <div #j_503 class="title-wrapper">
+                        <ion-img #j_504 src="assets/images/Ba_l_ks_z_5.png" alt="Image error">
+                        </ion-img>
+                    </div>
+                    <div #j_505 class="form-wrapper">
+                        <form #loginForm="ngForm" #loginForm_el (ngSubmit)="loginformNgSubmit__j_506($event, currentItem)">
+                            <ion-item #j_507__ion4Item>
+                                <ion-label #j_507__ion4Label color="medium" position="floating">
+                                    Email
+                                </ion-label>
+                                <ion-icon #j_507__icon ngClass="input-icon" name="person" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #username="ngModel" #username_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                color="dark" maxlength="254" minlength="1" name="username" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                                required="true" type="email">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_508 color="danger" class="error" [ngClass]="{'visible': username.touched && username.errors}">
+                                Please enter a valid Email
+                            </ion-text>
+                            <ion-item #j_509__ion4Item>
+                                <ion-label #j_509__ion4Label color="medium" position="floating">
+                                    Password
+                                </ion-label>
+                                <ion-icon #j_509__icon ngClass="eye" name="eye" slot="end" color="primary">
+                                </ion-icon>
+                                <ion-input #password="ngModel" #password_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                                ngClass="password" color="dark" name="password" required="true" type="password">
+                                </ion-input>
+                            </ion-item>
+                            <ion-text #j_510 color="danger" class="error" [ngClass]="{'visible': password.touched && password.errors && password.errors.required}">
+                                Please enter a Password
+                            </ion-text>
+                            <div #j_511 class="keep-logged-in">
+                                <ion-item #j_512__ion4Item lines="none" mode="ios">
+                                    <ion-label #j_512__ion4Label color="dark" mode="ios">
+                                        Keep me logged in
+                                    </ion-label>
+                                    <ion-checkbox #rememberme="ngModel" #rememberme_el [ngModel]="false" mode="ios"
+                                    name="rememberme" slot="start" value="Checkbox1_value">
+                                    </ion-checkbox>
+                                </ion-item>
+                            </div>
+                            <ion-button #j_513 color="primary" expand="block" shape="round" type="submit" (click)="signinbuttonClick__j_513($event, currentItem)">
+                                Sign in
+                            </ion-button>
+                        </form>
+                        <ion-grid #j_514>
+                            <ion-row #j_515>
+                                <ion-col #j_516 class="ion-align-self-center ion-no-padding">
+                                    <a #j_517 href="#" [routerLink]="['/repassword']">
+                                    Forgot password?
+                                    </a>
+                                </ion-col>
+                                <ion-col #j_518 class="ion-align-self-center ion-text-center ion-no-padding">
+                                    <a #j_519 href="https://appery.io" [routerLink]="['/signup']">
+                                    Sign Up
+                                    </a>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer mode="ios">
+    <ion-card #j_521>
+        <ion-card-header #j_522 color="light" mode="ios">
+            Hey! Login is not required. You can see deals and get coupon codes without logging
+            in
+        </ion-card-header>
+    </ion-card>
+    <ion-button #j_523 color="success" expand="block" shape="round" size="default" strong="true"
+    routerDirection="root" [routerLink]="['/nicetabs']">
+        <ion-icon #j_523__icon slot="start" src="assets/images/home.svg">
+        </ion-icon>
+        Keep exploring the deals
+    </ion-button>
+</ion-footer>

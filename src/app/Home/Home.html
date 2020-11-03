@@ -1,0 +1,202 @@
+<ion-header mode="ios">
+    <ion-toolbar #j_121 mode="ios">
+        <ion-grid #j_122 class="ion-no-padding">
+            <ion-row #j_123 class="ion-align-items-center ion-justify-content-center ion-nowrap">
+                <ion-col #j_124 size="1" class="ion-align-self-center ion-text-center ion-no-padding">
+                    <ion-menu-button #j_125>
+                        <ion-icon #j_125__icon src="assets/images/open-menu.svg">
+                        </ion-icon>
+                    </ion-menu-button>
+                </ion-col>
+                <ion-col #j_126 size="8" class="ion-align-self-center">
+                    <ion-searchbar #j_127 animated="true" autocomplete="on" autocorrect="on" debounce="2000"
+                    placeholder="Search Deals" type="search" mode="ios" class="search" (ionChange)="search1IonChange__j_127($event, currentItem)">
+                    </ion-searchbar>
+                </ion-col>
+                <ion-col #j_128 size="2" class="ion-align-self-center ion-text-center">
+                    <ion-img #j_129 src="assets/images/Untitled-1.png" alt="Image error">
+                    </ion-img>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+<ion-content forceOverscroll="false" scrollEvents="true" scrollX="false" scrollY="true">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="" refreshingSpinner="circles"
+        refreshingText="Refreshing Deals...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-grid #j_77>
+        <ion-row #j_78 class="ion-align-items-center ion-justify-content-center">
+            <ion-col #j_79 class="ion-align-self-center ion-text-center ion-no-padding">
+                <ion-slides pager="true" loop="true" #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+                    <ion-slide *ngFor="let item of featuredItems">
+                        <ion-card>
+                            <ion-card-header>
+                                <span class="slide-discount">
+                                    -{{item.discount}}% OFF
+                                </span>
+                                <div class="featured-item">
+                                    <ion-text>
+                                        FEATURED DEALS
+                                    </ion-text>
+                                    <ion-icon name="logo-ionic" size="small" src="assets/images/rocket.svg">
+                                    </ion-icon>
+                                </div>
+                            </ion-card-header>
+                            <ion-grid class="slider-grid">
+                                <ion-row>
+                                    <ion-col size="7" class="">
+                                        <img class="slider-img" [routerLink]="['/dealdetail', item]" src="{{item.imgurl}}"
+                                        alt="" />
+                                    </ion-col>
+                                    <ion-col class="slide-title-container">
+                                        <ion-label color="primary" class="slide-title" [routerLink]="['/dealdetail', item]">
+                                            {{item.title.length>50? item.title.substring(0,80) + "...": item.title}}
+                                        </ion-label>
+                                        <span>
+                                            #Ad
+                                        </span>
+                                        <ion-grid>
+                                            <ion-row>
+                                                <ion-col>
+                                                    <img *ngIf="item.isPrime" class="slide-prime-img" src="assets/images/prime.png"
+                                                    alt="" />
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row class="ion-align-items-end">
+                                                <ion-col class="ion-align-self-center ion-text-center ion-no-padding">
+                                                    <span mode="ios" color="danger" class="slide-price">
+                                                        ${{item.price}}
+                                                    </span>
+                                                    <span mode="ios" color="medium" class="slide-oldprice">
+                                                        ${{item.old_price}}
+                                                    </span>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-grid>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid #j_81 class="ion-no-padding">
+        <ion-row #j_82>
+            <ion-col #j_83 class="ion-align-self-center ion-text-center ion-padding-top">
+                <span #j_84>
+                    <span style="font-size:14px">
+                        Deals added in the last 24 hours (
+                        <span style="font-weight:700">
+                            {{this.itemCount}}
+                        </span>
+                        )
+                    </span>
+                </span>
+                <ion-icon #j_85 name="logo-ionic" size="small" src="assets/images/flame_1596904970.svg">
+                </ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div #j_86>
+        <ion-virtual-scroll [items]="taskList" approxItemHeight="153px">
+            <ion-card #j_87 mode="ios" class="todoListItem" *virtualItem="let task;let itemBounds = bounds;"
+            data-id="">
+                <ion-card-content #j_88 class="card-item">
+                    <ion-grid #j_89>
+                        <ion-row #j_90 class="ion-align-items-center">
+                            <ion-col #j_91 size="4" size-lg="6" size-md="6" size-xl="6" class="img-wrapper ion-text-center ion-no-padding">
+                                <div #j_92>
+                                    <img src="{{task.imgurl}}" [routerLink]="['/dealdetail', task]" alt="" />
+                                    <span class="discount">
+                                        -{{task.discount}}%
+                                    </span>
+                                </div>
+                            </ion-col>
+                            <ion-col #j_93 class="grid">
+                                <ion-label #j_94 color="primary" class="title" [routerLink]="['/dealdetail', task]">
+                                    {{task.title.length&gt;30? task.title.substring(0,30) + &quot; ...&quot;: task.title}}
+                                    &lt;Detail&gt;
+                                </ion-label>
+                                <ion-text #j_95>
+                                    #Ad
+                                </ion-text>
+                                <ion-grid #j_96 class="ion-padding-top">
+                                    <ion-row #j_97 class="ion-align-items-center">
+                                        <ion-col #j_98 size="5" class="ion-align-self-center ion-text-end ion-no-padding">
+                                            <rating #j_99 [readonly]="true" fullIcon="★" [(ngModel)]="task.star" [titles]="['one', 'two', 'three', 'four', 'five']"
+                                            [disabled]="false" [float]="true" [max]="5" emptyIcon="☆" style="font-size: 8px;">
+                                                <ion-img #j_100 src="assets/images/rating.png" alt="Image error">
+                                                </ion-img>
+                                            </rating>
+                                        </ion-col>
+                                        <ion-col #j_101 size="2" class="ion-align-self-center ion-text-start ion-no-padding">
+                                            <div #j_102>
+                                                <span style="font-size:9px;font-weight:700">
+                                                    ({{task.rating}})
+                                                </span>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col #j_103 size="5" class="ion-text-end ion-no-padding">
+                                            <ion-button #j_104 buttonType="button" color="secondary" expand="block" mode="ios"
+                                            shape="round" size="small" strong="true" href="{{task.url}}" class="coupon-btn" (click)="button4_copy1Click__j_104($event, currentItem)"
+                                            onclick="copyToClipboard(this.id);" data-id="{{task.code}}">
+                                                Get Coupon
+                                            </ion-button>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                                <ion-grid #j_105 class="ion-padding-top">
+                                    <ion-row #j_106>
+                                        <ion-col #j_107 size="5" class="ion-align-self-center ion-text-start ion-no-padding">
+                                            <span #j_108 mode="ios" color="danger" class="price">
+                                                ${{task.price}}
+                                            </span>
+                                            <span #j_109 mode="ios" color="medium" class="oldprice">
+                                                ${{task.old_price}}
+                                            </span>
+                                        </ion-col>
+                                        <ion-col #j_110 size="2" class="ion-align-self-center ion-text-start ion-no-padding">
+                                            <div #j_111 class="prime-wrapper" [hidden]="!task.isPrime">
+                                                <img class="prime-img" src="assets/images/prime.png" alt="" />
+                                            </div>
+                                        </ion-col>
+                                        <ion-col #j_112 class="ion-no-padding">
+                                            <ion-grid #j_113 class="ion-no-padding">
+                                                <ion-row #j_114 class="ion-align-items-center ion-justify-content-center">
+                                                    <ion-col #j_115 size="4" class="ion-align-self-center ion-text-start ion-no-padding">
+                                                        <ion-button #j_116 color="medium" disabled="false" fill="clear" mode="ios" size="small"
+                                                        class="like-btn" [routerLink]="['/dealdetail', task]">
+                                                            <ion-icon #j_116__icon slot="start" src="assets/images/thumbs-up-hand-symbol.svg">
+                                                            </ion-icon>
+                                                            {{((task.like))}}
+                                                        </ion-button>
+                                                    </ion-col>
+                                                    <ion-col #j_117 size="3" class="ion-align-self-center ion-text-end ion-no-padding">
+                                                        <ion-button #j_118 color="medium" disabled="false" fill="clear" mode="ios" size="small"
+                                                        class="like-btn" [routerLink]="['/dealdetail', task]">
+                                                            <ion-icon #j_118__icon slot="start" src="assets/images/love.svg">
+                                                            </ion-icon>
+                                                            {{(task.hotcount)}}
+                                                        </ion-button>
+                                                    </ion-col>
+                                                </ion-row>
+                                            </ion-grid>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                                <ion-input #j_119 ngClass="code" name="Input2" placeholder="Enter text" readonly="true"
+                                value="{{task.code}}" id="{{task.code}}">
+                                </ion-input>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+        </ion-virtual-scroll>
+    </div>
+</ion-content>

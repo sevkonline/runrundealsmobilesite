@@ -1,0 +1,92 @@
+.title {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+span.oldprice {
+    text-decoration: line-through;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+span.price {
+    font-size: 15px;
+    margin-right: 5px;
+    color: red;
+    font-weight: 700;
+}
+
+img {
+    width: 100%;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.desc {
+    font-size: 16px;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+span.discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #0cd1e8;
+    color: #fff;
+    font-size: 15px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 700;
+}
+
+span.expire {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f04141;
+    color: #fff;
+    font-size: 15px;
+    display: block;
+    padding: 0 3px;
+    font-weight: 400;
+}
+
+.like,
+.disslike {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.like-wrapper {
+    height: 30px;
+}
+
+.prime-img {
+    width: 50px !important;
+    height: 20px !important;
+    display: block;
+}
+
+.prime-wrapper {
+    display: block;
+}
+
+.extraDescription {
+    font-size: 14px;
+    font-weight: 700;
+    color: #008000 !important;
+}
+
+
+@media (min-width: 768px) {
+    img {
+        width: 50%;
+        margin: 0 auto;
+        height: 530px;
+    }
+}
+
+

@@ -1,0 +1,70 @@
+<ion-header mode="ios">
+    <ion-toolbar #j_333 mode="ios">
+        <ion-buttons #j_334 slot="start">
+            <ion-back-button #j_335 mode="ios">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title #j_336>
+            Report ⚠️
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card #j_314>
+        <ion-card-header #j_315 color="danger" class="title">
+            Please report the not working coupon code, faulty or missing product to us
+        </ion-card-header>
+        <ion-img #j_316 src="{{this.img}}" alt="Image error" class="img">
+        </ion-img>
+        <ion-grid #j_317>
+            <ion-row #j_318>
+                <ion-col #j_319 class="ion-text-center">
+                    <h6 #j_320>
+                        {{this.title.substring(0,45)}}...
+                    </h6>
+                </ion-col>
+            </ion-row>
+            <ion-row #j_321>
+                <ion-col #j_322 class="ion-no-padding">
+                    <ion-text #j_323 class="id">
+                        {{this.id}}
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div #j_324 class="form-wrapper">
+            <form #signUpForm="ngForm" #signUpForm_el>
+                <ion-item #j_326__ion4Item>
+                    <ion-icon #j_326__icon name="mail" slot="end" color="primary">
+                    </ion-icon>
+                    <ion-input #email="ngModel" #email_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                    color="dark" maxlength="254" minlength="1" name="email" pattern="^(([^<>()\[\]\\.,;:\s@&#34;]+(\.[^<>()\[\]\\.,;:\s@&#34;]+)*)|(&#34;.+&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+                    placeholder="Email (Optional)" required="true" type="email" (ionChange)="mailIonChange__j_326($event, currentItem)">
+                    </ion-input>
+                </ion-item>
+                <ion-item #j_327__ion4Item lines="full">
+                    <ion-icon #j_327__icon ngClass="eye" name="text" slot="end" color="primary">
+                    </ion-icon>
+                    <ion-input #message="ngModel" #message_el [ngModel] [ngModelOptions]="{updateOn: 'change'}"
+                    ngClass="message" color="dark" maxlength="300" minlength="6" multiple="true" name="message"
+                    placeholder="Additional message(Optional)" required="true" type="text">
+                    </ion-input>
+                </ion-item>
+            </form>
+        </div>
+        <ion-grid #j_328>
+            <ion-row #j_329>
+                <ion-col #j_330 class="ion-text-center">
+                    <ion-button #j_331 buttonType="button" color="danger" shape="round" size="default"
+                    strong="true" type="submit" (click)="sendbtnClick__j_331($event, currentItem)" id="">
+                        <ion-icon #j_331__icon name="alert" slot="start">
+                        </ion-icon>
+                        Report this Product
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>
+<ion-footer>
+</ion-footer>
